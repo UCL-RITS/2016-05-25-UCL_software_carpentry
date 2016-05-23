@@ -1,8 +1,8 @@
 #--------------------------------------------------------------------------------
 # Values for this workshop - EDIT THIS SECTION.
 #--------------------------------------------------------------------------------
-workshop_repo   : "https://github.com/UCL-RITS/2016-05-25-UCL_software_carpentry"
-workshop_site   : "http://UCL-RITS.github.io/2016-05-25-UCL_software_carpentry"
+workshop_repo   : "https://github.com/UCL-RITS/2016-06-23-UCL_software_carpentry"
+workshop_site   : "http://UCL-RITS.github.io/2016-06-23-UCL_software_carpentry"
 #--------------------------------------------------------------------------------
 # Standard Software Carpentry settings - should not need to be modified.
 #--------------------------------------------------------------------------------
