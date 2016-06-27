@@ -1,0 +1,243 @@
+Welcome to Software Carpentry Etherpad!
+
+This pad is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents.
+
+Users are expected to follow our code of conduct: http://software-carpentry.org/conduct.html
+
+All content is publicly available under the Creative Commons Attribution License: https://creativecommons.org/licenses/by/4.0/
+
+We will use this Etherpad to share links and snippets of code, take notes, ask and answer questions, and whatever else comes to mind.
+
+The page displays a screen with three major parts:
+    * The left side holds today's notes: please edit these as we go along.
+    * The top right side shows the names of users who are logged in: please add your name and pick the color that best reflects your mood and personality.
+    * The bottom right is a real time chat window for asking questions of the instructor and your fellow learners.
+
+To start, please add yourself to the attendee list below:
+    * Instructor (discipline, institution)
+      - Benjamin Laken (RSD , UCL)
+      - David Pérez-Suárez (RSD/astrophysics, UCL)
+      - Tom Couch (RITS, UCL)
+      - Mladen Georgiev (ISD, UCL)
+    * Helpers (discipline, institution)
+      -
+    * Attendee
+      -Robert Wacholc
+      -Pete Dockrill
+
+*Software Carpentry Etherpad: June 22-23 2016, UCL
+*
+*Main lesson page: http://rits.github-pages.ucl.ac.uk/2016-06-22-UCL_software_carpentry/
+*Survey Code: 2016-06-22-UCL
+*Please use this etherpad as a place to track notes and chatter, and please do:
+	    1. Ask (and answer) questions communally in the pad
+	    2. Update the pad with commands, links, notes and annotations for youself and your fellow students as the lesson progresses
+	
+*12
+*The Unix Shell
+*Getting ready
+Before we start you'll need to download some files:
+    1. Download the zip file from this location: http://swcarpentry.github.io/shell-novice/shell-novice-data.zip
+    2. Unzip/Extract the file and copy the data-shell folder to your desktop
+
+*Socrative exercises
+During this module, we'll be using Socrative to ask you some questions. To take part:
+    1. Visit https://b.socrative.com/login/student/
+    2. Join this room: UqlwDDj6
+    
+*Commands
+
+pwd - print working directory - tells you your current location in the filesystem
+
+whoami - returns current username
+
+pwd - Print Working Directory, where are you in your filesystem.
+
+ls - lists all files and folders in working directory
+	* -F appends an indicator to tell directories from files
+	* ls [directory]  - lists all files and folders in the specified sub-directory
+	* -a lists all files, including the hidden files (those that start with a dot)
+	* -r lists the files in reverse order
+
+cd - change directory
+
+clear - clears shell's window
+
+special symbols:
+	* . represents the current directory
+	* .. represents the parent directory of the current directory
+	* ~ represents the home directory
+	* * wildcard representing 0 or more characters
+	* ? wildcard representing exactly one or zero character(s)
+	* | ("pipe") - sends output of one command to a second command
+	* $ specifies the next thing you type is a variable name and not to be read literally
+
+[up arrow] - cycles through previous commands in the command line. Can then be executed by pressing enter as usual
+GIT, git it all!
+
+mkdir - makes a new directory
+
+nano draft.txt- makes a new text file and opens in nano
+In nano, ^ = ctrl
+
+rm - removes file (a text file, not a folder/directory)
+	* rm -r thesis - removes folder/directory
+	* rm -ri thesis- goes through each subfolder in directory asking if want to remove
+
+mv [from_path/current_filename] [to_path/new_filename] - moves file current_filename in from_path to to_path and names it new_filename.
+
+cp - copy - same as mv, except it leaves a copy of the file in the original location
+
+[Ctrl+C] - when a command is running, this cancels it
+
+wc [filename] - (word count) tells you the number of lines, words, characters in [filename]
+	* -l , counts the number of lines
+	* -w , counts the number of words
+	* -c , counts the number of characters 
+
+
+cat - prints contents of file to screen
+
+sort - sorts a list alphabetically
+	* -n sorts a list numerically (ascending order)
+
+
+Looping:
+    $ for var in foo_list   enter
+    > do   enter
+    > some_command with $var   enter
+    > done   enter
+
+alternately:
+     for var in foo_list; do [some_command]; do [some_other_command]; done
+
+echo - simple print command; prints whatever you type after it. Accepts variables with $
+
+touch - creates an empty file with the specified file name, can also change the timestamp of the file should you execute without creating a new file: touch -c ...
+
+bash - executes the commands contained in a specified file, accepts variables as inputs
+
+GIT, git it all!!!
+Socrative code:  0Xx3NcSV
+
+Set up Git:
+    git config --global user.name "My Name"
+    git config --global user.email "me@ucl.ac.uk"
+    git config --global color.ui "auto"
+    git config --global core.editor "nano -w"
+    
+See the Git config
+	git config --list
+
+Initialise a repository in a certain folder
+	git init
+
+Check the status of the repository 
+	git status 
+
+See whats changed:
+    git diff
+    
+Make a change to a document
+	git add filename
+	git commit -m "Write a message to track the changes"
+	
+See what commits you've made to the file
+	git log
+	
+If you want to see previous versions of the file:
+    git diff HEAD~1 filename
+    
+If want to revert back to a previous version
+	git checkout HEAD filename
+	git reset HEAD filename
+	git checkout -- filename
+	
+	https://github.com/notifications to accept the invitation
+	
+	
+	
+*Day 2: Python
+
+Socrative Room: 755T5UATS
+
+(If you have python 2.7 you can update using Conda:)
+$ conda create --name py3 python=3.5 ipython
+$ source activate py3
+
+Getting started:
+You need to download some files to follow this lesson (from http://swcarpentry.github.io/python-novice-inflammation/python-novice-inflammation-data.zip )
+1. Make a new folder in your Desktop called python-novice-inflammation.
+2. Download python-novice-inflammation-data.zip and move the file to this folder.
+3. If it’s not unzipped yet, double-click on it to unzip it. You should end up with a new folder called data.
+4. You can access this folder from the Unix shell with:
+*$ cd && cd Desktop/python-novice-inflammation/data
+	
+	
+	In the py notebook:
+	
+	C?         ...works as a manual page of command C
+	print(X)     ...return a print out of variable X
+	%who       ...to show the list of variables and modules loaded
+	%whos      ...as per %who with more details 
+	type(X)      ...return the type of variable X
+	
+	
+
+*Databases and SQL
+*Getting ready
+
+Download the database file:
+    http://files.software-carpentry.org/survey.db
+    
+$ sqlite3 survey.db
+sqlite> .tables
+
+*Socrative
+
+Here are the notes:
+    http://swcarpentry.github.io/sql-novice-survey/index.html
+
+Here are the instructions to get to the quizzes.
+    1. Visit https://b.socrative.com/login/student/
+    2. Join this room: G4NNY4GU
+
+*Test Query
+
+sqlite> SELECT * FROM site;
+
+To get the list of tables
+.tables
+
+To see the fields of a table 
+.schema tablename
+
+*Python Notebook Code
+
+import sqlite3
+connection = sqlite3.connect("survey.db")
+cursor = connection.cursor()
+cursor.execute("SELECT reading FROM Survey WHERE quant = 'sal';")
+results = cursor.fetchall()
+
+n = 0
+sum = 0
+for r in results:
+     sum += r[0]
+     n += 1
+avg = sum/n
+result = 0
+for r in results:
+     print r
+     result += (r[0] - avg)**2
+
+print "I computed: ", result/(n-1)
+
+cursor.close()
+connection.close()
+
+
+
+
+
+
